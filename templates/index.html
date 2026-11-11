@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="w3-card-4 w3-white w3-round-xlarge w3-animate-top"
+     style="width:60%;margin:auto;padding:25px;">
+
+    <div class="w3-right">
+        <a href="/signup" class="w3-button w3-indigo w3-round">
+            SIGN UP
+        </a>
+    </div>
+
+    <div style="clear:both"></div>
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="w3-panel w3-pale-blue w3-border">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endwith %}
+    <div style="width:80%;margin:auto;">
+        <h2 class="w3-center">USER LOGIN</h2>
+        <form action="/userlogin" method="post">
+            <p>
+                <label><b>E-MAIL</b></label>
+                <input type="email" name="email"
+                       class="w3-input w3-border"
+                       placeholder="Enter Email" required />
+            </p>
+			<p>
+				<label><b>PASSWORD</b></label>
+				<div style="position:relative;">
+					<input type="password" name="password"
+						   id="loginpassword"
+						   class="w3-input w3-border"
+						   placeholder="Enter Password"
+						   style="padding-right:45px;" required />
+				</div>
+			</p>
+            <p class="w3-right">
+                <input type="submit" value="LOGIN"
+                       class="w3-button w3-indigo w3-round" />
+            </p>
+
+            <div style="clear:both"></div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/w3.css') }}">
+		<title>USER LOGIN</title>
+	</head>
+	<body>
+		<div class="w3-container w3-padding w3-indigo w3-bar"> 
+			USER LOGIN v1.0
+			{% block logout %}
+			{% endblock%}
+		</div>
+		<div class="w3-container w3-padding-16">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<center>
+			<hr/>
+			Copyright &copy, HangadGabriel 2026
+		</center>
+		
+	</body>
+</html>

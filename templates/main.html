@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+{% block logout %}
+    <a href="/logout" class="w3-button w3-white w3-round w3-right">
+        LOGOUT
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="w3-card-4 w3-white w3-round-xlarge w3-animate-top"
+     style="width:90%;margin:auto;padding:25px;">
+
+    <h2>WELCOME TO YOUR DASHBOARD!</h2>
+    <h3>Hi, {{ email }}!</h3>
+    <p>You have successfully logged in.</p>
+
+    <hr>
+
+    <h3>STUDENT RECORDS</h3>
+
+    <table class="w3-table-all w3-hoverable">
+        <tr class="w3-indigo">
+            <th>ID</th>
+            <th>IDNO</th>
+            <th>LASTNAME</th>
+            <th>FIRSTNAME</th>
+            <th>COURSE</th>
+            <th>LEVEL</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+            <td>{{ student[4] }}</td>
+            <td>{{ student[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+<script>
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+
+{% endblock %}
